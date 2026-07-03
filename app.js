@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const toast = document.getElementById('toast');
     const inputCount = document.getElementById('inputCount');
     const outputCount = document.getElementById('outputCount');
+    const copyOutputInlineBtn = document.getElementById('copyOutputInlineBtn');
 
     function getQuoteType() {
         const radio = document.querySelector('input[name="quoteType"]:checked');
@@ -105,8 +106,18 @@ document.addEventListener('DOMContentLoaded', function() {
         copyToClipboard(outputText.value, '结果已复制');
     }
 
+    function handleCopyOutputInline() {
+        if (!outputText.value.trim()) {
+            showToast('结果为空');
+            return;
+        }
+        const inlineText = outputText.value.replace(/\n/g, '');
+        copyToClipboard(inlineText, '结果已复制(去除换行)');
+    }
+
     processBtn.addEventListener('click', handleProcess);
     copyInputBtn.addEventListener('click', handleCopyInput);
     copyOutputBtn.addEventListener('click', handleCopyOutput);
+    copyOutputInlineBtn.addEventListener('click', handleCopyOutputInline);
     inputText.addEventListener('input', updateInputCount);
 });
