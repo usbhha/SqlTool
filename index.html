@@ -11,9 +11,8 @@
         <h1>字符串处理</h1>
         
         <div class="input-section">
-            <label for="inputText">输入字符串(每行一个):</label>
             <div class="textarea-wrapper">
-                <textarea id="inputText" placeholder="请输入字符串，每行一个..."></textarea>
+                <textarea id="inputText" placeholder="请输入"></textarea>
                 <button id="copyInputBtn" class="copy-btn" title="复制输入">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -22,22 +21,23 @@
                 </button>
             </div>
             
-            <div class="options-section">
-                <div class="quote-option">
-                    <input type="radio" id="singleQuote" name="quoteType" value="single" checked>
-                    <label for="singleQuote">单引号 (')</label>
-                </div>
-                <div class="quote-option">
-                    <input type="radio" id="doubleQuote" name="quoteType" value="double">
-                    <label for="doubleQuote">双引号 (")</label>
-                </div>
-                <div class="quote-option">
-                    <input type="radio" id="commaOnly" name="quoteType" value="commaOnly">
-                    <label for="commaOnly">只加逗号</label>
+            <div class="action-row">
+                <button id="processBtn" class="process-btn">确认</button>
+                <div class="options-section">
+                    <div class="quote-option">
+                        <input type="radio" id="singleQuote" name="quoteType" value="single" checked>
+                        <label for="singleQuote">单引号 (')</label>
+                    </div>
+                    <div class="quote-option">
+                        <input type="radio" id="doubleQuote" name="quoteType" value="double">
+                        <label for="doubleQuote">双引号 (")</label>
+                    </div>
+                    <div class="quote-option">
+                        <input type="radio" id="commaOnly" name="quoteType" value="commaOnly">
+                        <label for="commaOnly">只加逗号</label>
+                    </div>
                 </div>
             </div>
-            
-            <button id="processBtn" class="process-btn">确认</button>
         </div>
         
         <div class="output-section">

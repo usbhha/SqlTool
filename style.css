@@ -10,7 +10,7 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: linear-gradient(135deg, #c5cffc 0%, #d8c8ec 100%);
+    background: linear-gradient(135deg, #e3f2fd 0%, #fce4ec 100%);
     min-height: 100vh;
 }
 
@@ -52,8 +52,8 @@ label {
 
 textarea {
     width: 100%;
-    height: 140px;
-    padding: 14px;
+    height: 220px;
+    padding: 14px 40px 14px 14px;
     border: 2px solid #e0e0e0;
     border-radius: 8px;
     font-size: 14px;
@@ -75,13 +75,13 @@ textarea:focus {
 
 .copy-btn {
     position: absolute;
-    right: 10px;
-    bottom: 10px;
-    width: 36px;
-    height: 36px;
+    right: 8px;
+    top: 8px;
+    width: 28px;
+    height: 28px;
     background-color: #f0f0f0;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -95,29 +95,37 @@ textarea:focus {
 }
 
 .copy-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 13px;
+    height: 13px;
 }
 
 .copy-btn:hover svg path {
     stroke: white;
 }
 
+.action-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
 .options-section {
     display: flex;
     gap: 12px;
-    margin: 10px 0;
+    margin: 0;
     flex-wrap: wrap;
 }
 
 .quote-option {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     cursor: pointer;
-    padding: 7px 12px;
+    padding: 4px 8px;
     background-color: #f8f9fa;
-    border-radius: 8px;
+    border-radius: 6px;
     transition: all 0.2s ease;
 }
 
@@ -126,8 +134,8 @@ textarea:focus {
 }
 
 .quote-option input[type="radio"] {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     accent-color: #646cff;
 }
 
@@ -136,21 +144,21 @@ textarea:focus {
     cursor: pointer;
     font-weight: 400;
     color: #444;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .process-btn {
     background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
     color: white;
     border: none;
-    padding: 10px 28px;
-    border-radius: 8px;
-    font-size: 13px;
+    padding: 8px 24px;
+    border-radius: 6px;
+    font-size: 12px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 4px 12px rgba(100, 108, 255, 0.4);
-    width: 100%;
+    width: auto;
 }
 
 .process-btn:hover {
