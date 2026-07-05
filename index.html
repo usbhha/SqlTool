@@ -50,11 +50,25 @@
                 </button>
                 <button id="copyOutputInlineBtn" class="copy-btn" title="复制结果(去除换行)">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                     </svg>
+                    <span class="strikethrough-text">\n</span>
                 </button>
-                <label for="outputText">处理结果:</label>
+                <div class="bracket-options">
+                    <div class="bracket-option">
+                        <input type="radio" id="bracketParentheses" name="bracketType" value="parentheses">
+                        <label for="bracketParentheses">()</label>
+                    </div>
+                    <div class="bracket-option">
+                        <input type="radio" id="bracketBrackets" name="bracketType" value="brackets">
+                        <label for="bracketBrackets">[]</label>
+                    </div>
+                    <div class="bracket-option">
+                        <input type="radio" id="bracketBraces" name="bracketType" value="braces">
+                        <label for="bracketBraces">{}</label>
+                    </div>
+                </div>
             </div>
             <div class="textarea-wrapper">
                 <textarea id="outputText" class="output-text" readonly placeholder="处理结果将显示在这里..."></textarea>

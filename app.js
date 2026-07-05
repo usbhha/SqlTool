@@ -103,7 +103,21 @@ document.addEventListener('DOMContentLoaded', function() {
             showToast('结果为空');
             return;
         }
-        copyToClipboard(outputText.value, '结果已复制');
+        let text = outputText.value;
+        const bracketType = getBracketType();
+        if (bracketType === 'parentheses') {
+            text = '(' + text.replace(/\n/g, '') + ')';
+        } else if (bracketType === 'brackets') {
+            text = '[' + text.replace(/\n/g, '') + ']';
+        } else if (bracketType === 'braces') {
+            text = '{' + text.replace(/\n/g, '') + '}';
+        }
+        copyToClipboard(text, '结果已复制');
+    }
+
+    function getBracketType() {
+        const radio = document.querySelector('input[name="bracketType"]:checked');
+        return radio ? radio.value : null;
     }
 
     function handleCopyOutputInline() {
@@ -111,8 +125,16 @@ document.addEventListener('DOMContentLoaded', function() {
             showToast('结果为空');
             return;
         }
-        const inlineText = outputText.value.replace(/\n/g, '');
-        copyToClipboard(inlineText, '结果已复制(去除换行)');
+        let text = outputText.value.replace(/\n/g, '');
+        const bracketType = getBracketType();
+        if (bracketType === 'parentheses') {
+            text = '(' + text + ')';
+        } else if (bracketType === 'brackets') {
+            text = '[' + text + ']';
+        } else if (bracketType === 'braces') {
+            text = '{' + text + '}';
+        }
+        copyToClipboard(text, '结果已复制(去除换行)');
     }
 
     processBtn.addEventListener('click', handleProcess);
@@ -120,4 +142,24 @@ document.addEventListener('DOMContentLoaded', function() {
     copyOutputBtn.addEventListener('click', handleCopyOutput);
     copyOutputInlineBtn.addEventListener('click', handleCopyOutputInline);
     inputText.addEventListener('input', updateInputCount);
+
+    const bracketRadios = document.querySelectorAll('input[name="bracketType"]');
+    bracketRadios.forEach(radio => {
+        radio.addEventListener('click', function() {
+            if (this.dataset.wasChecked === 'true') {
+                this.checked = false;
+                delete this.dataset.wasChecked;
+            } else {
+                bracketRadios.forEach(r => delete r.dataset.wasChecked);
+                this.dataset.wasChecked = 'true';
+            }
+        });
+        radio.addEventListener('change', function() {
+            if (this.checked) {
+                this.dataset.wasChecked = 'true';
+            } else {
+                delete this.dataset.wasChecked;
+            }
+        });
+    });
 });

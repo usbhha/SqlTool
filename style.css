@@ -102,6 +102,42 @@ textarea:focus {
     align-items: center;
     gap: 8px;
     margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.bracket-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.bracket-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 4px 8px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.bracket-option:hover {
+    background-color: #e9ecef;
+}
+
+.bracket-option input[type="radio"] {
+    width: 13px;
+    height: 13px;
+    accent-color: #67c23a;
+}
+
+.bracket-option label {
+    margin-bottom: 0;
+    cursor: pointer;
+    font-weight: 500;
+    color: #444;
+    font-size: 12px;
 }
 
 .copy-btn {
@@ -132,6 +168,13 @@ textarea:focus {
 .copy-btn svg {
     width: 16px;
     height: 16px;
+}
+
+.copy-btn .strikethrough-text {
+    text-decoration: line-through;
+    font-size: 12px;
+    margin-left: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
 }
 
 .action-row {
